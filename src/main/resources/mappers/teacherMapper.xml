@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.ed.haebeop.persistence.TeacherMapper">
+    <select id="getTeacherList" resultType="kr.ed.haebeop.domain.Teacher">
+        <![CDATA[
+        select * from teacher
+        ]]>
+        <where>
+            <if test="searchType != null">
+                <choose>
+                    <when test="searchType == 'tid'.toString()">
+                        teacher_name LIKE concat('%', #{searchKeyword}, '%')
+                    </when>
+                    <when test="searchType == 'tel'.toString()">
+                        tel LIKE concat('%', #{searchKeyword}, '%')
+                    </when>
+                </choose>
+            </if>
+        </where>
+        <![CDATA[
+        order by teacher_name LIMIT #{postStart}, #{postCount}
+        ]]>
+    </select>
+
+    <!-- 강사 목록 출력 -->
+    <select id="teacherList" resultType="kr.ed.haebeop.domain.Teacher">
+        select * from teacher order by teacher_name
+    </select>
+
+    <select id="getTeacher" resultType="kr.ed.haebeop.domain.Teacher">
+        select * from teacher where tno  = #{tno }
+    </select>
+
+    <!-- 강사 수 카운트 -->
+    <select id="countTeacher" resultType="integer">
+        <![CDATA[
+        select count(*) from teacher
+        ]]>
+        <where>
+            <if test="searchType != null">
+                <choose>
+                    <when test="searchType == 'tid'.toString()">
+                        teacher_name LIKE concat('%', #{searchKeyword}, '%')
+                    </when>
+                    <when test="searchType == 'tel'.toString()">
+                        tel LIKE concat('%', #{searchKeyword}, '%')
+                    </when>
+                </choose>
+            </if>
+        </where>
+    </select>
+
+    <insert id="insertTeacher">
+        insert into teacher values(default, #{teacher_name }, #{tel }, #{email })
+    </insert>
+    <delete id="teacherDelete">
+        DELETE FROM teacher WHERE tno = #{tno }
+    </delete>
+</mapper>
