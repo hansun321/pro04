@@ -2,10 +2,13 @@ package kr.ed.haebeop.controller;
 
 import kr.ed.haebeop.domain.Comment;
 import kr.ed.haebeop.domain.Review;
+import kr.ed.haebeop.domain.User;
 import kr.ed.haebeop.service.CommentService;
 import kr.ed.haebeop.service.ReviewService;
+import kr.ed.haebeop.service.UserService;
 import kr.ed.haebeop.util.BadWordFilter;
 import kr.ed.haebeop.util.Page;
+import org.checkerframework.checker.units.qual.A;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -61,7 +64,6 @@ public class ReviewController {
 
         List<Review> reviewList = reviewService.reviewList(page);
         model.addAttribute("reviewList", reviewList);
-
         return "/review/reviewList";
     }
 
@@ -70,7 +72,7 @@ public class ReviewController {
         int no = Integer.parseInt(request.getParameter("no"));
         Review domain = reviewService.reviewDetail(no);
         model.addAttribute("domain", domain);
-
+        model.addAttribute("author", reviewService.getAuthor(domain));
         // 댓글 불러오기
         List<Comment> comment = commentService.commentList(no);
         model.addAttribute("domain", domain);
@@ -151,10 +153,10 @@ public class ReviewController {
     }
 
     //ckeditor를 이용한 이미지 업로드
-    @RequestMapping(value="imageUpload.do", method = RequestMethod.POST)
+    @RequestMapping(value = "imageUpload.do", method = RequestMethod.POST)
     public void imageUpload(HttpServletRequest request,
                             HttpServletResponse response, MultipartHttpServletRequest multiFile
-            , @RequestParam MultipartFile upload) throws Exception{
+            , @RequestParam MultipartFile upload) throws Exception {
         // 랜덤 문자 생성
         UUID uid = UUID.randomUUID();
 
@@ -164,21 +166,21 @@ public class ReviewController {
         //인코딩
         response.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=utf-8");
-        try{
+        try {
             //파일 이름 가져오기
             String fileName = upload.getOriginalFilename();
             byte[] bytes = upload.getBytes();
 
             //이미지 경로 생성
-            String path = "E:\\springframework\\pro04_2\\src\\main\\webapp\\resources\\upload" + "ckImage/";	// 이미지 경로 설정(폴더 자동 생성)
+            String path = "E:\\springframework\\pro04_2\\src\\main\\webapp\\resources\\upload" + "ckImage/";    // 이미지 경로 설정(폴더 자동 생성)
             String ckUploadPath = path + uid + "_" + fileName;
             File folder = new File(path);
-            System.out.println("path:"+path);	// 이미지 저장경로 console에 확인
+            System.out.println("path:" + path);    // 이미지 저장경로 console에 확인
             //해당 디렉토리 확인
-            if(!folder.exists()){
-                try{
+            if (!folder.exists()) {
+                try {
                     folder.mkdirs(); // 폴더 생성
-                }catch(Exception e){
+                } catch (Exception e) {
                     e.getStackTrace();
                 }
             }
@@ -192,24 +194,30 @@ public class ReviewController {
             String fileUrl = "/team24_war/review/ckImgSubmit.do?uid=" + uid + "&fileName=" + fileName; // 작성화면
 
             // 업로드시 메시지 출력
-            printWriter.println("{\"filename\" : \""+fileName+"\", \"uploaded\" : 1, \"url\":\""+fileUrl+"\"}");
+            printWriter.println("{\"filename\" : \"" + fileName + "\", \"uploaded\" : 1, \"url\":\"" + fileUrl + "\"}");
             printWriter.flush();
 
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         } finally {
             try {
-                if(out != null) { out.close(); }
-                if(printWriter != null) { printWriter.close(); }
-            } catch(IOException e) { e.printStackTrace(); }
+                if (out != null) {
+                    out.close();
+                }
+                if (printWriter != null) {
+                    printWriter.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return;
     }
 
     //ckeditor를 이용한 서버에 전송된 이미지 뿌려주기
-    @RequestMapping(value="ckImgSubmit.do")
-    public void ckSubmit(@RequestParam(value="uid") String uid
-            , @RequestParam(value="fileName") String fileName
+    @RequestMapping(value = "ckImgSubmit.do")
+    public void ckSubmit(@RequestParam(value = "uid") String uid
+            , @RequestParam(value = "fileName") String fileName
             , HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 

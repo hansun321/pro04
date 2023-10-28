@@ -19,4 +19,6 @@ public interface ReviewService {
     public void reviewEdit(Review domain) throws Exception;
 
     public int totalCount(Page page) throws Exception;
+
+    public String getAuthor(Review review) throws Exception;
 }

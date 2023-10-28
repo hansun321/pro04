@@ -234,7 +234,7 @@
                     <p class="has-text-black has-text-weight-semibold mt-1" style="font-size: 1.75rem;">${domain.title }</p>
                     <div class="blog-item-meta py-2 mb-4">
                         <span class="is-size-6 mr-3">작성자
-                            <span class="is-size-6 has-text-grey ml-1">${domain.id }</span>
+                            <span class="is-size-6 has-text-grey ml-1">${author }</span>
                         </span> |
                         <span class="is-size-6 mx-3">작성일
                             <span class="is-size-6 has-text-grey ml-1">${domain.resdate }</span>
@@ -254,6 +254,7 @@
                 <c:choose>
                     <c:when test="${not empty sid && sid eq 'admin'}">
                         <a class="button mx-1" style="background-color: #2B3A55; color: #fff;" href="${path1 }/review/list.do">목록</a>
+                        <a class="button is-info" href="${path1 }/review/edit.do?no=${domain.no}">수정</a>
                         <a class="button is-danger mx-1" href="${path1 }/review/delete.do?no=${domain.no}">삭제</a>
                     </c:when>
                     <c:when test="${not empty sid && sid eq domain.id}">
