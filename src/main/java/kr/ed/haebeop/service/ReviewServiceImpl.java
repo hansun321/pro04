@@ -50,7 +50,7 @@ public class ReviewServiceImpl implements ReviewService {
     }
 
     @Override
-    public String getAuthor(Review review) throws Exception {
+    public String getAuthor(Review review) {
         String id = review.getId();
         return userMapper.getUser(id).getName();
     }

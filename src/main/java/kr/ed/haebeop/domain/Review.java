@@ -14,4 +14,5 @@ public class Review {
     private String resdate;
     private int visit;
     private String id;
+    private int commentCnt;
 }

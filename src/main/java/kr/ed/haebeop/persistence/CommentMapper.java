@@ -9,8 +9,10 @@ import java.util.List;
 public interface CommentMapper {
 
     public List<Comment> commentList(int par) throws Exception;
+
     public void commentInsert(Comment domain) throws Exception;
+
     public void commentDelete(int dno) throws Exception;
 
-
+    public Comment read(int dno) throws Exception;
 }

@@ -25,6 +25,7 @@
             font-size: 1.25rem;
             border-top: 2px solid #dee2e6;
             border-bottom: 1px solid #dbdbdb;;
+            min-height: 10rem;
         }
         .table th {
             white-space: nowrap;
@@ -118,6 +119,9 @@
                         <td>${total - ((curPage - 1) * page.postCount + status.index) }</td>
                         <td>
                             <a href="${path1 }/review/detail.do?no=${review.no }" class="al">${review.title }</a>
+                            <c:if test="${review.commentCnt > 0 }">
+                                <span class="text-color is-size-6">[${review.commentCnt }]</span>
+                            </c:if>
                         </td>
                         <fmt:parseDate value="${review.resdate}" pattern="yyyy-MM-dd" var="formattedDate" />
                         <td class="has-text-centered"><fmt:formatDate value="${formattedDate }" pattern="yyyy.MM.dd"/></td>

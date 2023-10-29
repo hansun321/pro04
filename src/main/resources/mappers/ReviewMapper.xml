@@ -50,7 +50,7 @@
 
     <!-- 후기 글 작성 -->
     <insert id="reviewInsert">
-        insert into review VALUES (default, #{title}, #{content}, default, default, #{id});
+        insert into review VALUES (default, #{title}, #{content}, default, default, #{id}, default);
     </insert>
 
     <!-- 후기 글 삭제 -->
@@ -98,4 +98,10 @@
         ORDER BY regdate DESC LIMIT ((#{pageNum} - 1) * #{amount}), #{amount}
         ]]>
     </select>
+
+    <update id="updateCommentCnt">
+        update review
+        set commentCnt = commentCnt + #{amount}
+        where no = #{no}
+    </update>
 </mapper>

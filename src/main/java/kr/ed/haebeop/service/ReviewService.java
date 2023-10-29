@@ -20,5 +20,5 @@ public interface ReviewService {
 
     public int totalCount(Page page) throws Exception;
 
-    public String getAuthor(Review review) throws Exception;
+    public String getAuthor(Review review);
 }

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.ed.haebeop.persistence.CommentMapper">
-
-
+    
     <select id="commentList" resultType="kr.ed.haebeop.domain.Comment">
-        select * from comment where par = #{par} order by regdate desc
+        select * from comment where par = #{par} order by regdate
     </select>
 
     <insert id="commentInsert">
@@ -12,7 +11,11 @@
     </insert>
 
     <delete id="commentDelete">
-        delete from comment where dno=#{dno}
+        delete from comment where dno = #{dno}
     </delete>
 
+    <!-- 댓글 조회 -->
+    <select id ="read" resultType="kr.ed.haebeop.domain.Comment">
+        select * from comment where dno = #{dno}
+    </select>
 </mapper>
