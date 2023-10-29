@@ -112,8 +112,8 @@
                     </tr>--%>
                     </tbody>
                 </table>
-                <div class="has-text-centered">
-                    <button type="submit" class="button is-link mb-5 p-5" style="border-radius: 1.5rem;">수정하기</button>
+                <div class="has-text-centered mb-5">
+                    <button type="submit" class="button is-link p-5" style="border-radius: 1.5rem;">수정하기</button>
                 </div>
             </form>
         </div>

@@ -155,7 +155,6 @@
                 </c:forEach>
                 </tbody>
               </table>
-              </p>
               <nav class="pagination is-rounded is-centered mb-6" role="navigation" aria-label="pagination">
 <%--                <c:if test="${curPage > page.pageCount }">--%>
                     <c:if test="${(page.blockStartNum - 1) > 0}">

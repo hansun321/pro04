@@ -6,6 +6,7 @@ import kr.ed.haebeop.domain.User;
 import kr.ed.haebeop.service.CommentService;
 import kr.ed.haebeop.service.ReviewService;
 import kr.ed.haebeop.service.UserService;
+import kr.ed.haebeop.util.Alert;
 import kr.ed.haebeop.util.BadWordFilter;
 import kr.ed.haebeop.util.Page;
 import org.checkerframework.checker.units.qual.A;
@@ -87,19 +88,18 @@ public class ReviewController {
     }
 
     @PostMapping("insert.do")
-    public String reviewInsert(HttpServletRequest request, Model model) throws Exception {
+    public String reviewInsert(HttpServletResponse response, HttpServletRequest request, Model model) throws Exception {
         String title = request.getParameter("title");
         String content = request.getParameter("content");
-        String msg = "";
         Review domain = new Review();
-
         BadWordFilter filter = new BadWordFilter();
 
         if (filter.check(title) || filter.check(content)) {
-            msg = "제목 또는 내용에 비속어를 사용할 수 없습니다.";
+            Alert.alert(response, "제목 또는 내용에 비속어를 사용할 수 없습니다.");
+
+            // 작성한 내용 되돌려주기
             model.addAttribute("title", title);
             model.addAttribute("content", content);
-            model.addAttribute("msg", msg);
             return "/review/reviewInsert";
         } else {
             domain.setTitle(title);
@@ -126,22 +126,21 @@ public class ReviewController {
     }
 
     @PostMapping("edit.do")
-    public String reviewEdit(HttpServletRequest request, Model model) throws Exception {
+    public String reviewEdit(HttpServletResponse response, HttpServletRequest request, Model model) throws Exception {
         int no = Integer.parseInt(request.getParameter("no"));
         String title = request.getParameter("title");
         String content = request.getParameter("content");
-        String msg = "";
 
         Review domain = new Review();
 
         BadWordFilter filter = new BadWordFilter();
 
         if (filter.check(title) || filter.check(content)) {
-            msg = "제목 또는 내용에 비속어를 사용할 수 없습니다.";
+            Alert.alert(response, "제목 또는 내용에 비속어를 사용할 수 없습니다.");
+
             domain.setTitle(title);
             domain.setContent(content);
             model.addAttribute("domain", domain);
-            model.addAttribute("msg", msg);
             return "/review/reviewEdit";
         } else {
             domain.setNo(no);
