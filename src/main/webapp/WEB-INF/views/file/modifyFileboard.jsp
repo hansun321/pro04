@@ -22,7 +22,7 @@
 
 <body>
 <!-- 헤더 부분 인클루드 -->
-<jsp:include page="../include/header.jsp"></jsp:include>
+<jsp:include page="../include/header.jsp" />
 <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4" style="background: #f1f4f9" aria-label="breadcrumbs">
     <ul class="mr-5">
         <li><a href="${path1}"><i class="xi-home is-size-3"></i></a></li>
@@ -256,7 +256,7 @@
 </div>
 
 <!-- 푸터 부분 인클루드 -->
-<jsp:include page="../include/footer.jsp"></jsp:include>
+<jsp:include page="../include/footer.jsp" />
 <!-- 푸터 부분 끝 -->
 </body>
 </html>

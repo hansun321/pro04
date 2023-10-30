@@ -17,8 +17,6 @@
 </head>
 
 <style>
-
-    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
     .single-blog-item {
         min-height: 35vh;
     }
@@ -31,32 +29,11 @@
         color: black;
         font-size: 1.25rem;
     }
-
-    .button2 {
-        text-decoration: none;
-        border-radius: 20px;
-        margin: 15px;
-        padding: 10px;
-        float: right;
-        background-color: #FFA500;
-        border-color: #FFA500;
-        color: #ffffff;
-    }
-    .button3 {
-        text-decoration: none;
-        border-radius: 20px;
-        margin: 15px;
-        padding: 10px;
-        float: right;
-        background-color: #FF968A;
-        border-color: #FF968A;
-        color: #ffffff;
-    }
 </style>
 
 <body>
 <!-- 헤더 부분 인클루드 -->
-<jsp:include page="../include/header.jsp"></jsp:include>
+<jsp:include page="../include/header.jsp" />
 <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4" style="background: #f1f4f9" aria-label="breadcrumbs">
     <ul class="mr-5">
         <li><a href="${path1}"><i class="xi-home is-size-3"></i></a></li>
@@ -126,6 +103,6 @@
 
 
 <!-- 푸터 부분 인클루드 -->
-<jsp:include page="../include/footer.jsp"></jsp:include>
+<jsp:include page="../include/footer.jsp" />
 </body>
 </html>

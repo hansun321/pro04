@@ -19,13 +19,10 @@
     <style>
         .breadcrumb a { color: #464646; }
 
-        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
-
         .table {
             font-size: 1.25rem;
             border-top: 2px solid #dee2e6;
             border-bottom: 1px solid #dbdbdb;;
-            min-height: 10rem;
         }
         .table th {
             white-space: nowrap;
@@ -38,17 +35,15 @@
             padding: 0.75em 0.75em;
         }
 
-
         .item1 { width:6%; }
         .item2 { width:64%; }
         .item3 { width:10%; }
         .item4 { width:10%; }
         .item5 { width:10%; }
     </style>
-
 </head>
 <body>
-<jsp:include page="../include/header.jsp"></jsp:include>
+<jsp:include page="../include/header.jsp" />
 <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4" style="background: #f1f4f9" aria-label="breadcrumbs">
     <ul class="mr-5">
         <li><a href="${path1}"><i class="xi-home is-size-3"></i></a></li>
@@ -170,6 +165,6 @@
         }
     }
 </script>
-<jsp:include page="../include/footer.jsp"></jsp:include>
+<jsp:include page="../include/footer.jsp" />
 </body>
 </html>
