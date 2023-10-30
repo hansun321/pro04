@@ -17,7 +17,6 @@
 </head>
 
 <style>
-
     @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
     .single-blog-item {
         min-height: 35vh;
@@ -32,25 +31,8 @@
         font-size: 1.25rem;
     }
 
-    .button2 {
-        text-decoration: none;
-        border-radius: 20px;
-        margin: 15px;
-        padding: 10px;
-        float: right;
-        background-color: #FFA500;
-        border-color: #FFA500;
-        color: #ffffff;
-    }
-    .button3 {
-        text-decoration: none;
-        border-radius: 20px;
-        margin: 15px;
-        padding: 10px;
-        float: right;
-        background-color: #FF968A;
-        border-color: #FF968A;
-        color: #ffffff;
+    .btns .button {
+        width: 6rem;
     }
 </style>
 
@@ -65,7 +47,8 @@
     </ul>
     <p class="title has-text-centered mt-1 mb-2">자료실</p>
 </nav>
-<div class="container is-fullhd">
+
+<%--<div class="container is-fullhd">
     <div class="content" id="contents">
         <div class="row column1 text-center" style="margin-bottom: 80px;">
             <h2 class="h2">${fileboard.fileBoard.title}</h2>
@@ -113,6 +96,64 @@
                     <c:when test="${sid.equals('admin')}">
                         <a class="button mx-1" style="background-color: #2B3A55; color: #fff;" href="${path1 }/file/list.do">목록</a>
                             <a class="button is-info mx-1" href="${path1}/file/modifyFileboard.do?postNo=${fileboard.fileBoard.postNo}">수정</a>
+                        <a class="button is-danger mx-1" href="${path1}/file/removeFileboard.do?postNo=${fileboard.fileBoard.postNo}">삭제</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a class="button mx-1" style="background-color: #2B3A55; color: #fff;" href="${path1 }/file/list.do">목록</a>
+                    </c:otherwise>
+                </c:choose>
+            </div>
+        </div>
+    </div>
+</div>
+--%>
+
+<div class="container">
+    <div class="columns is-multiline mt-1">
+        <div class="column is-12 mb-5 border-top">
+            <div class="single-blog-item">
+                <div class="blog-item-content ml-6 mt-3">
+                    <%--<h2 class="mt-4">A place where start new life with peace</h2>--%>
+                    <p class="has-text-black has-text-weight-semibold mt-1" style="font-size: 1.75rem;">${fileboard.fileBoard.title }</p>
+
+                    <div class="blog-item-meta py-2 mb-4">
+                        <span class="is-size-6 mr-3">작성자
+                            <span class="is-size-6 has-text-grey ml-1">관리자</span>
+                        </span> |
+                        <span class="is-size-6 mx-3">작성일
+                            <span class="is-size-6 has-text-grey ml-1">${fileboard.fileBoard.regdate }</span>
+                        </span> |
+                        <span class="is-size-6 mx-3">조회수
+                            <span class="is-size-6 has-text-grey ml-1">${fileboard.fileBoard.visited }</span>
+                        </span>
+                    </div>
+
+                    <div class="border-top border-bottom py-4">
+                        <span>첨부파일</span>
+                        <c:forEach var="file" items="${fileboard.fileList}">
+                            <li class="px-2" style="display: inline-block;">
+                                <c:if test="${!empty file.originFile}">
+                                    <i class="icofont-file-alt"></i>
+                                    <a href="${path1}/resources/upload/${file.originFile}" title="${file.fileSize}"
+                                       download>${file.originFile}</a>
+                                </c:if>
+                            </li>
+                        </c:forEach>
+                    </div>
+
+                    <div class="mt-5">
+                        <p>
+                            ${fileboard.fileBoard.content }
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btns has-text-centered">
+                <c:choose>
+                    <c:when test="${sid.equals('admin')}">
+                        <a class="button mx-1" style="background-color: #2B3A55; color: #fff;" href="${path1 }/file/list.do">목록</a>
+                        <a class="button is-info mx-1" href="${path1}/file/modifyFileboard.do?postNo=${fileboard.fileBoard.postNo}">수정</a>
                         <a class="button is-danger mx-1" href="${path1}/file/removeFileboard.do?postNo=${fileboard.fileBoard.postNo}">삭제</a>
                     </c:when>
                     <c:otherwise>

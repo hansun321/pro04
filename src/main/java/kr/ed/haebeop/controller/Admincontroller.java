@@ -66,9 +66,8 @@ public class Admincontroller {
         List<User> userList = userService.userList(page);
         model.addAttribute("userList", userList);
 
-        System.out.println("curPage : " + curPage);
-        System.out.println("page.getpageCount : " + page.getPageCount());
-
+        //System.out.println("curPage : " + curPage);
+        //System.out.println("page.getpageCount : " + page.getPageCount());ㅅ
         return "/admin/userList";
     }
 

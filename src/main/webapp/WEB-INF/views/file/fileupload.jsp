@@ -16,14 +16,18 @@
 </head>
 <style>
     .breadcrumb a { color: #464646; }
-
-    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
     .table th {
         white-space: nowrap;
         vertical-align: middle;
     }
     .table input[type="file"] {
         width: 28rem;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
+    .control span {
+        font-family: 'Nanum Gothic Coding', monospace;
+        font-weight: 550;
     }
 </style>
 <body>
@@ -82,13 +86,13 @@
                                     <span style="padding: 5px; margin: 5px">파일2 : </span>
                                     <input type="file" name="file2" id="file2" class="file-input">
                                     <span class="file-cta">
-                                                    <span class="file-icon">
-                                                        <i class="fas fa-upload"></i>
-                                                    </span>
-                                                <span class="file-label">
-                                                    <span id="file2Name">파일을 첨부해주세요</span>
-                                                </span>
-                                            </span>
+                                        <span class="file-icon">
+                                            <i class="fas fa-upload"></i>
+                                        </span>
+                                        <span class="file-label">
+                                            <span id="file2Name">파일을 첨부해주세요</span>
+                                        </span>
+                                    </span>
                                 </label>
                             </div>
                             <div class="control">
