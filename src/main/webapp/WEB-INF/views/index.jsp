@@ -44,7 +44,6 @@
 
         .course-tit a { font-size: 1.3rem; }
         .course-tit a:hover { text-decoration: underline; color: initial }
-        /*.blog-item img { transition: transform 0.4s; }*/
         .blog-item img:hover { box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) }
     </style>
 </head>
@@ -217,12 +216,6 @@
             <c:otherwise>
                 <c:forEach items="${newCourseList}" var="course" varStatus="status">
                     <c:if test="${status.index < 3}">
-                        <%--<a href="${path1 }/course/getCourse?cno=${course.cno }">
-                            <div>
-                                <i class="fa fa-solid fa-seedling"></i>
-                                    ${course.course_name }
-                            </div>
-                        </a>--%>
                         <div class="column is-4-desktop is-6-tablet">
                             <div class="blog-item">
                                 <div class="has-text-centered">
@@ -245,44 +238,6 @@
                 </c:forEach>
             </c:otherwise>
         </c:choose>
-
-
-        <%--<div class="column is-4-desktop is-6-tablet">
-            <div class="blog-item">
-                <img src="${path1}/resources/images/blog/blog_1.jpg" alt="" class="">
-
-                <div class="card-body mt-2">
-                    <span class="text-sm text-color is-uppercase has-text-weight-bold">January 3, 2019</span>
-                    <h3 class="mb-3"><a href="blog-single.html" class="">We can make a difference in families lives</a></h3>
-                    <p class="mb-4">Aspernatur obcaecati unde, quasi nihil neque, voluptatem. Consectetur.</p>
-                </div>
-            </div>
-        </div>--%>
-        <%--
-        <div class="column is-4-desktop is-6-tablet">
-            <div class="blog-item">
-                <img src="${path1}/resources/images/blog/blog_2.jpg" alt="" class="">
-
-                <div class="card-body mt-2">
-                    <span class="text-sm text-color is-uppercase has-text-weight-bold">January 3, 2019</span>
-                    <h3 class="mb-3"><a href="blog-single.html" class="">A place where start new life with peace</a></h3>
-                    <p class="mb-4">Aspernatur obcaecati unde, quasi nihil neque, voluptatem. Consectetur.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="column is-4-desktop is-6-tablet">
-            <div class="blog-item">
-                <img src="${path1}/resources/images/blog/blog_3.jpg" alt="" class="">
-
-                <div class="card-body mt-2">
-                    <span class="text-sm text-color is-uppercase has-text-weight-bold">January 3, 2019</span>
-                    <h3 class="mb-3"><a href="blog-single.html" class="">Build school for poor childrens</a></h3>
-                    <p class="mb-4">Aspernatur obcaecati unde, quasi nihil neque, voluptatem. Consectetur.</p>
-                </div>
-            </div>
-        </div>
-        --%>
     </div>
 </div>
 <script src="${path1 }/resources/js/tabs.js"></script>
