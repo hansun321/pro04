@@ -38,7 +38,7 @@
 </head>
 <body>
 <!-- Header Start -->
-<jsp:include page="../include/header.jsp"></jsp:include>
+<jsp:include page="../include/header.jsp" />
 <!-- Header Close -->
 
 <!-- Content Start -->
@@ -144,7 +144,7 @@
 <!-- Content Close -->
 
 <!-- Footer Start -->
-<jsp:include page="../include/footer.jsp"></jsp:include>
+<jsp:include page="../include/footer.jsp" />
 <!-- Footer Close -->
 </body>
 </html>

@@ -183,7 +183,7 @@
 
 </head>
 <body>
-<jsp:include page="../include/header.jsp"></jsp:include>
+<jsp:include page="../include/header.jsp" />
 
 <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4" style="background: #f1f4f9" aria-label="breadcrumbs">
     <ul class="mr-5">
@@ -281,6 +281,6 @@
     </ul>
 </nav>
 
-<jsp:include page="../include/footer.jsp"></jsp:include>
+<jsp:include page="../include/footer.jsp" />
 </body>
 </html>

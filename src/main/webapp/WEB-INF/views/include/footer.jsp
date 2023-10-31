@@ -15,7 +15,6 @@
                 <li><a href="">이메일무단수집거부</a></li>
             </ul>
             <ul class="snb">
-                <%--<li><a href="https://www.facebook.com/geniaAcademyManager">소셜2</a></li>--%>
                 <li>
                     <a href="https://www.instagram.com/genia.academy" target="_blank">
                         <i class="xi-instagram"></i>

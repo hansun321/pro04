@@ -138,7 +138,7 @@
 </head>
 <body>
 <!-- 헤더 부분 인클루드 -->
-<jsp:include page="../include/header.jsp"></jsp:include>
+<jsp:include page="../include/header.jsp" />
 <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4" style="background: #f1f4f9" aria-label="breadcrumbs">
     <ul class="mr-5">
         <li><a style="color: black;" href="${path1}"><i class="xi-home is-size-3"></i></a></li>
@@ -192,6 +192,6 @@
         </div>
     </div>
 </div>
-<jsp:include page="../include/footer.jsp"></jsp:include>
+<jsp:include page="../include/footer.jsp" />
 </body>
 </html>

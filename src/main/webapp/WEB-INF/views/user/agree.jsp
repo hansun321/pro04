@@ -46,7 +46,7 @@
 </head>
 <body>
 
-<%--<jsp:include page="../include/header.jsp"></jsp:include>--%>
+<%--<jsp:include page="../include/header.jsp" />--%>
 
 <div class="content container1" id="content">
   <div class="logo">
@@ -987,7 +987,7 @@
   </script>
 </div>
 
-<%--<jsp:include page="../include/footer.jsp"></jsp:include>--%>
+<%--<jsp:include page="../include/footer.jsp" />--%>
 
 </body>
 </html>

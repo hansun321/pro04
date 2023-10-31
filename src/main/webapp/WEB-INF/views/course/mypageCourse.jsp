@@ -56,7 +56,7 @@
 <body>
 
 <!-- START NAV -->
-<jsp:include page="../include/header.jsp"></jsp:include>
+<jsp:include page="../include/header.jsp" />
 
 <!-- END NAV -->
 <div class="container">
@@ -145,7 +145,7 @@
         </div>
     </div>
 </div>
-<jsp:include page="../include/footer.jsp"></jsp:include>
+<jsp:include page="../include/footer.jsp" />
 <script async type="text/javascript" src="${path1 }/resources/js/bulma.js"></script>
 <script>
     $(document).ready(function() {

@@ -17,79 +17,63 @@
 
     <style>
         .breadcrumb a { color: #464646; }
-
-        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
-        /*
         *{
-            font-family: 'Nanum Gothic Coding', monospace;
-        } */
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
 
-        /*.title {
-            font-family: 'Nanum Gothic Coding', monospace;
-            margin-top: 55px;
+        .wrapper {
+            max-width: 75%;
+            margin: auto;
+        }
+
+        .wrapper > h1 {
             text-align: center;
-            font-weight: 700;
-        }*/
+        }
 
-    *{
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        /*font-family: 'Nanum Gothic Coding', monospace;*/
-    }
+        .accordion {
+            background-color: white;
+            color: rgba(0, 0, 0, 0.8);
+            cursor: pointer;
+            font-size: 20px;
+            width: 100%;
+            padding: 2rem 2.5rem;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
 
-    .wrapper {
-        max-width: 75%;
-        margin: auto;
-    }
+        .accordion i {
+            font-size: 1.6rem;
+        }
 
-    .wrapper > h1 {
-        text-align: center;
-    }
+        .active,
+        .accordion:hover {
+            background-color: #f1f7f5;
+        }
 
-    .accordion {
-        background-color: white;
-        color: rgba(0, 0, 0, 0.8);
-        cursor: pointer;
-        font-size: 20px;
-        width: 100%;
-        padding: 2rem 2.5rem;
-        border: none;
-        outline: none;
-        transition: 0.4s;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-weight: bold;
-    }
+        .pannel {
+            padding: 0 2rem 2.5rem 2rem;
+            background-color: white;
+            overflow: hidden;
+            background-color: #f1f7f5;
+            display: none;
+        }
 
-    .accordion i {
-        font-size: 1.6rem;
-    }
+        .pannel p{
+            color: rgba(0, 0, 0, 0.7);
+            font-size: 18px;
+            line-height: 1.4;
+        }
 
-    .active,
-    .accordion:hover {
-        background-color: #f1f7f5;
-    }
-
-    .pannel {
-        padding: 0 2rem 2.5rem 2rem;
-        background-color: white;
-        overflow: hidden;
-        background-color: #f1f7f5;
-        display: none;
-    }
-
-    .pannel p{
-        color: rgba(0, 0, 0, 0.7);
-        font-size: 18px;
-        line-height: 1.4;
-    }
-
-    .faq {
-        border: 1px solid rgba(0, 0, 0, 0.2);
-    }
-
+        .faq {
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
     </style>
 
 </head>
@@ -98,7 +82,7 @@
 <script type="text/javascript" src=https://cdn.jsdelivr.net/npm/bulma-accordion@2.0.1/dist/js/bulma-accordion.min.js"></script>
 <body>
 <!-- 헤더 부분 인클루드 -->
-<jsp:include page="../include/header.jsp"></jsp:include>
+<jsp:include page="../include/header.jsp" />
 <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4" style="background: #f1f4f9" aria-label="breadcrumbs">
     <ul class="mr-5">
         <li><a href="${path1}"><i class="xi-home is-size-3"></i></a></li>
@@ -148,6 +132,6 @@
 </script>
 
 <!-- 푸터 부분 인클루드 -->
-<jsp:include page="../include/footer.jsp"></jsp:include>
+<jsp:include page="../include/footer.jsp" />
 </body>
 </html>
