@@ -300,6 +300,14 @@ public class Admincontroller {
         return "redirect:/admin/courseList";
     }
 
+    @GetMapping("courseEdit")
+    public String editCourse(HttpServletRequest request, Model model) throws Exception {
+        int cno = Integer.parseInt(request.getParameter("cno"));
+        //courseService.deleteCourse(cno);
+        return "redirect:/admin/courseList";
+    }
+
+
     // 관리자 파일 처리 시스템
     @RequestMapping(value = "fileList.do", method = RequestMethod.GET)
     public String getFileList(HttpServletRequest request, Model model) throws Exception {

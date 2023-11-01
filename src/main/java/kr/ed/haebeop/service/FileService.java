@@ -2,10 +2,8 @@ package kr.ed.haebeop.service;
 
 import kr.ed.haebeop.domain.FileDTO;
 import kr.ed.haebeop.domain.FileVO;
-import kr.ed.haebeop.domain.Notice;
 import kr.ed.haebeop.util.Page;
 
-import java.io.File;
 import java.util.List;
 
 public interface FileService {

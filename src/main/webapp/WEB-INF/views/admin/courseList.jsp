@@ -109,7 +109,7 @@
                                 <td class="has-text-centered"><fmt:formatNumber value="${course.price }" pattern="#,###" />원</td>
                                 <td class="has-text-centered"><fmt:formatNumber value="${course.book_price }" pattern="#,###" />원</td>
                                 <td class="has-text-centered">
-                                    <%--<a href="${path1 }/admin/courseDelete?cno=${course.cno }"><button class="button is-info is-rounded" style="scale: 70%;">수정</button></a>--%>
+                                    <a href="${path1 }/admin/courseEdit?cno=${course.cno }"><button class="button is-info is-rounded" style="scale: 70%;">수정</button></a>
                                     <a href="${path1 }/admin/courseDelete?cno=${course.cno }"><button class="button is-danger is-rounded" style="scale: 70%;">삭제</button></a>
                                 </td>
                             </tr>

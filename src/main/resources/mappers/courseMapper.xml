@@ -64,7 +64,7 @@
                                   #{total_num}, #{curr_num}, #{teacher_name}, #{content},
                                   #{book_name}, #{book_price}, #{imgsrc1}, #{imgsrc2})
     </insert>
-    <update id="updateCourse">
+    <update id="editCourse">
         UPDATE course SET course_name = #{course_name} WHERE cno = #{cno}
     </update>
     <delete id="deleteCourse">

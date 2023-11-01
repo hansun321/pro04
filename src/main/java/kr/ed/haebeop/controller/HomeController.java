@@ -27,5 +27,4 @@ public class HomeController {
     public String contact() throws Exception {
         return "/contact/map";
     }
-
 }

@@ -34,6 +34,8 @@ public interface CourseService {
 
     public void deleteCourse(int cno) throws Exception;
 
+    public void editCourse(int cno) throws Exception;
+
     public int countCourse(Page page) throws Exception;
 
     public void insertEnroll(Enroll enroll);

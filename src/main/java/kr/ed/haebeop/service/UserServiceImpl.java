@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import javax.inject.Inject;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -56,10 +56,10 @@ public class UserServiceImpl implements UserService {
 
         User login = userMapper.logIn(mdto);
 
-        if(login != null) {
+        if (login != null) {
             loginSuccess = passwordEncoder.matches(mdto.getPw(), login.getPw());
         }
-        if(login != null && loginSuccess==true) {
+        if (login != null && loginSuccess == true) {
             session.setAttribute("user", login);
             session.setAttribute("sid", login.getId());
             loginSuccess = true;

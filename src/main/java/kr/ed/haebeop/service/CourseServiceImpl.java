@@ -81,6 +81,11 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
+    public void editCourse(int cno) throws Exception {
+
+    }
+
+    @Override
     public int countCourse(Page page) throws Exception {
         return courseMapper.countCourse(page);
     }
