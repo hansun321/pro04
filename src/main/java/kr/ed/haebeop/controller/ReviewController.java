@@ -2,15 +2,11 @@ package kr.ed.haebeop.controller;
 
 import kr.ed.haebeop.domain.Comment;
 import kr.ed.haebeop.domain.Review;
-import kr.ed.haebeop.domain.User;
 import kr.ed.haebeop.service.CommentService;
 import kr.ed.haebeop.service.ReviewService;
-import kr.ed.haebeop.service.UserService;
 import kr.ed.haebeop.util.Alert;
 import kr.ed.haebeop.util.BadWordFilter;
 import kr.ed.haebeop.util.Page;
-import org.checkerframework.checker.units.qual.A;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

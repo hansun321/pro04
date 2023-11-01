@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <style>
+    .breadcrumb a { color: #464646; }
+
     .table th {
         white-space: nowrap;
         vertical-align: middle;
@@ -34,49 +36,6 @@
     </ul>
     <p class="title has-text-centered mt-1 mb-2">후기</p>
 </nav>
-<%--<div class="container is-fullhd">
-    <div class="content" id="contents">
-        <div class="row column1 text-center">
-            &lt;%&ndash;<h2 class="h2">후기 남기기</h2>
-            <hr>&ndash;%&gt;
-            <div class="container">
-                <form action="${path1 }/review/insert.do" method="post" >
-                    <table id="table1">
-                        <tbody>
-                        <tr>
-                            <th style="background-color:#dcdcdc">제목</th>
-                            <td>
-                                <input type="text" name="title" id="title" class="input" value="${title }" placeholder="제목 입력" maxlength="98" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th style="background-color:#dcdcdc">내용</th>
-                            <td>
-                                <textarea name="content" id="content" class="textarea" placeholder="내용 입력" rows="8" cols="100" maxlength="1400" required>${content }</textarea>
-                                <script>
-                                    CKEDITOR.replace('content',	{filebrowserUploadUrl:'${path1}/review/imageUpload.do'});
-                                </script>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td colspan="2">
-                                <input type="submit" class="button2" value="등록" >
-                                <a class="button" href="${path1 }/review/list.do">목록으로</a>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </form>
-                <script>
-                    if (${not empty msg } ) {
-                        alert("${msg }");
-                    };
-                </script>
-            </div>
-        </div>
-    </div>
-</div>--%>
 
 <div class="container">
     <div class="columns">

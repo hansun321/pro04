@@ -15,6 +15,8 @@
 
 </head>
 <style>
+    .breadcrumb a { color: #464646; }
+
     .table th {
         white-space: nowrap;
         vertical-align: middle;
@@ -24,53 +26,15 @@
 <!-- 헤더 부분 인클루드 -->
 <jsp:include page="../include/header.jsp" />
 <nav class="breadcrumb has-succeeds-separator is-medium is-right mt-3 p-4" style="background: #f1f4f9" aria-label="breadcrumbs">
-  <ul class="mr-5">
-    <li><a style="color: black;" href="${path1}"><i class="xi-home is-size-3"></i></a></li>
-    <li><a style="color: black;">커뮤니티</a></li>
-    <li><a style="color: black; "href="${path1}/review/list.do">후기</a></li>
-    <li><a style="color: black; ">후기 수정하기</a></li>
-  </ul>
+    <ul class="mr-5">
+    <li><a href="${path1}"><i class="xi-home is-size-3"></i></a></li>
+    <li><a href="">커뮤니티</a></li>
+    <li><a href="${path1}/review/list.do">후기</a></li>
+    <li><a href="">후기 수정</a></li>
+    </ul>
+    <p class="title has-text-centered mt-1 mb-2">후기</p>
 </nav>
 
-<%--<div class="container">
-    <div class="columns">
-        <div class="column is-10 is-offset-1">
-            <form action="${path1 }/review/edit.do" method="post">
-                <table id="table1">
-                    <tbody>
-                    <tr>
-                        <th style="background-color:#dcdcdc">제목 </th>
-                        <td>
-                            <input type="hidden" name="no" id="no" value="${domain.no }" >
-                            <input type="text" name="title" id="title" class="input" placeholder="제목" value="${domain.title }" maxlength="98" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th style="background-color:#dcdcdc">내용</th>
-                        <td>
-                <textarea name="content" class="textarea" id="content" placeholder="내용" rows="8" cols="100" maxlength="800"
-                          required>
-                    ${domain.content }
-                </textarea>
-                            <script>
-                                CKEDITOR.replace('content',	{filebrowserUploadUrl:'${path1}/review/imageUpload.do'});
-                            </script>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2">
-                            <input type="submit" class="button3" value="수정" >
-                            <a class="button" href="${path1 }/review/list.do">목록으로</a>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </form>
-        </div>
-        <div class="column is-1"></div>
-    </div>
-</div>--%>
 <div class="container">
     <div class="columns">
         <div class="column is-10 is-offset-1">
