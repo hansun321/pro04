@@ -32,7 +32,7 @@ public interface CourseMapper {
 
     public void insertCourse(Course course);
 
-    public void editCourse(Course course);
+    public void updateCourse(Course course);
 
     public void deleteCourse(int cno);
 
