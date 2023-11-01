@@ -1,8 +1,5 @@
-# team24!
-![heabeop](./sanchul/1.png)
+# pro04
 ![heabeop](./sanchul/4.png)
-![heabeop](./sanchul/5.png)
-![heabeop](./sanchul/6.png)
 ![heabeop](./sanchul/7.png)
 ![heabeop](./sanchul/8.png)
 ![heabeop](./sanchul/9.png)
